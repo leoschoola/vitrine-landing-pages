@@ -156,7 +156,7 @@
   .shop{ display:flex; flex-direction:column; text-decoration:none; color:inherit; cursor:pointer; }
 
   .window{
-    aspect-ratio: 4 / 3;
+    min-height: 230px;
     border-radius: 10px;
     padding: 6px;
     background: linear-gradient(155deg, #3a2f1d, #16130c 60%);
@@ -177,14 +177,13 @@
   }
 
   .scene{
-    height:100%;
+    min-height: 100%;
     width:100%;
     border-radius: 6px;
     background: var(--bg);
     color: var(--text);
     display:flex;
     flex-direction:column;
-    overflow:hidden;
     position:relative;
   }
   .chrome{
