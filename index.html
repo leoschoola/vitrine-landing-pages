@@ -146,14 +146,15 @@
   }
 
   .row{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display:flex;
+    flex-wrap: wrap;
     gap: 28px;
   }
-  .row.single{ grid-template-columns: minmax(250px, 480px); }
+  .row .shop{ flex: 1 1 250px; }
+  .row.single .shop{ flex: 0 1 480px; }
 
   /* ---------- Shop card ---------- */
-  .shop{ display:flex; flex-direction:column; text-decoration:none; color:inherit; cursor:pointer; }
+  .shop{ display:flex; flex-direction:column; text-decoration:none; color:inherit; cursor:pointer; min-width: 0; }
 
   .window{
     min-height: 230px;
