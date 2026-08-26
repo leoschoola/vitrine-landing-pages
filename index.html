@@ -1,0 +1,582 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rua das Vitrines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Big+Shoulders+Text:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --night-0:#0C0F16;
+    --night-1:#141827;
+    --night-2:#1C2133;
+    --ink-high:#F2EEE3;
+    --ink-mid:#ACA79A;
+    --ink-low:#716C60;
+    --line: rgba(242,238,227,0.10);
+    --gold:#E3AE5C;
+    --gold-soft: rgba(227,174,92,0.18);
+    --gold-glow: rgba(227,174,92,0.35);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+
+  body{
+    background: radial-gradient(ellipse 900px 500px at 20% -10%, rgba(227,174,92,0.06), transparent 60%),
+                linear-gradient(180deg, var(--night-0), #0A0C12 60%, #08090D);
+    color: var(--ink-high);
+    font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 56px);
+  }
+
+  h1,h2,h3,h4{
+    font-family: "Fraunces", Georgia, serif;
+    text-wrap: balance;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .eyebrow{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ---------- Header ---------- */
+  header.top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  header.top .mark{
+    font-family:"Big Shoulders Text", sans-serif;
+    font-weight:700;
+    letter-spacing: 0.04em;
+    font-size: 1rem;
+    color: var(--ink-high);
+    text-transform: uppercase;
+  }
+  header.top .mark span{ color: var(--gold); }
+  header.top .count{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--ink-low);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: clamp(48px, 9vw, 96px) 0 clamp(40px, 7vw, 72px);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero h1{
+    font-size: clamp(2.3rem, 5vw, 3.6rem);
+    font-weight: 500;
+    max-width: 15ch;
+    margin-top: 18px;
+    color: var(--ink-high);
+  }
+  .hero h1 em{
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold);
+  }
+  .hero p.lede{
+    max-width: 56ch;
+    margin-top: 22px;
+    font-size: 1.05rem;
+    color: var(--ink-mid);
+  }
+  .stats{
+    display:flex;
+    gap: clamp(24px, 5vw, 56px);
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  .stat b{
+    display:block;
+    font-family:"Fraunces", serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--ink-high);
+  }
+  .stat span{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-low);
+  }
+
+  /* ---------- District (section) ---------- */
+  .district{
+    padding: clamp(44px, 8vw, 72px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .district:last-of-type{ border-bottom:none; }
+  .district-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+  }
+  .district-head h2{
+    font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+    font-weight: 500;
+    color: var(--ink-high);
+  }
+  .district-head p{
+    margin:0;
+    color: var(--ink-low);
+    font-size: 0.92rem;
+    max-width: 40ch;
+  }
+
+  .row{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 28px;
+  }
+  .row.single{ grid-template-columns: minmax(250px, 480px); }
+
+  /* ---------- Shop card ---------- */
+  .shop{ display:flex; flex-direction:column; text-decoration:none; color:inherit; cursor:pointer; }
+
+  .window{
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    padding: 6px;
+    background: linear-gradient(155deg, #3a2f1d, #16130c 60%);
+    box-shadow: 0 0 0 1px rgba(227,174,92,0.15),
+                0 22px 46px -20px var(--win-glow, var(--gold-glow)),
+                0 2px 10px rgba(0,0,0,0.5);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .shop:hover .window{
+    transform: translateY(-4px);
+    box-shadow: 0 0 0 1px rgba(227,174,92,0.3),
+                0 30px 60px -18px var(--win-glow, var(--gold-glow)),
+                0 4px 14px rgba(0,0,0,0.55);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .window{ transition:none; }
+    .shop:hover .window{ transform:none; }
+  }
+
+  .scene{
+    height:100%;
+    width:100%;
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    position:relative;
+  }
+  .chrome{
+    display:flex;
+    gap:5px;
+    padding: 9px 10px;
+    background: rgba(0,0,0,0.12);
+  }
+  .chrome span{
+    width:6px; height:6px; border-radius:50%;
+    background: currentColor;
+    opacity: 0.35;
+  }
+  .scene-body{
+    flex:1;
+    padding: 16px 18px 18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap: 9px;
+  }
+  .scene .tagpill{
+    align-self:flex-start;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.56rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .scene .headline{
+    font-family:"Fraunces", serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height:1.18;
+    color: var(--text);
+    max-width: 20ch;
+  }
+  .scene .headline i{ color: var(--accent); font-style: italic; font-weight:400; }
+  .scene .subline{
+    font-size: 0.68rem;
+    color: var(--text-mute);
+    max-width: 26ch;
+    line-height:1.4;
+  }
+  .scene .ctas{ display:flex; gap:7px; margin-top:4px; }
+  .scene .btn{
+    font-size: 0.62rem;
+    font-weight:600;
+    padding: 6px 11px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: var(--btn-text, #0C0F16);
+  }
+  .scene .btn.ghost{
+    background: transparent;
+    border: 1px solid var(--text-mute);
+    color: var(--text);
+  }
+
+  /* form-style scene (calculadora) */
+  .scene .field{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    background: rgba(0,0,0,0.03);
+    border: 1px solid var(--line-soft, rgba(0,0,0,0.08));
+    border-radius:6px;
+    padding: 6px 9px;
+  }
+  .scene .field label{ font-size:0.52rem; color:var(--text-mute); }
+  .scene .field b{ font-family:"IBM Plex Mono", monospace; font-size:0.72rem; color:var(--text); font-weight:500; }
+
+  .plaque{
+    padding: 16px 2px 0;
+  }
+  .plaque .tag{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .plaque h3{
+    font-size: 1.15rem;
+    font-weight:600;
+    color: var(--ink-high);
+    margin-top: 5px;
+  }
+  .plaque p{
+    margin: 6px 0 0;
+    font-size: 0.88rem;
+    color: var(--ink-mid);
+    max-width: 34ch;
+  }
+
+  /* ---------- Footer CTA ---------- */
+  .cta-final{
+    padding: clamp(56px, 10vw, 96px) 0 clamp(64px, 9vw, 100px);
+    text-align:center;
+  }
+  .cta-final h2{
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight:500;
+    max-width: 20ch;
+    margin: 16px auto 0;
+    color: var(--ink-high);
+  }
+  .cta-final p{
+    color: var(--ink-mid);
+    max-width: 44ch;
+    margin: 16px auto 0;
+  }
+  .cta-final .actions{
+    margin-top: 32px;
+    display:flex;
+    gap: 14px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .btn-lg{
+    font-family:"IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 13px 26px;
+    border-radius: 8px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .btn-lg.primary{
+    background: var(--gold);
+    color: #171204;
+    box-shadow: 0 14px 30px -12px var(--gold-glow);
+  }
+  .btn-lg.secondary{
+    border: 1px solid var(--line);
+    color: var(--ink-high);
+  }
+  .cta-final .fineprint{
+    margin-top: 22px;
+    font-size: 0.78rem;
+    color: var(--ink-low);
+  }
+
+  footer.bottom{
+    border-top: 1px solid var(--line);
+    padding: 22px 0 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    color: var(--ink-low);
+  }
+
+  @media (max-width: 560px){
+    header.top{ flex-direction:column; align-items:flex-start; gap:8px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="mark">Rua das <span>Vitrines</span></div>
+    <div class="count">8 lojas nesta rua</div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Landing pages para negócio de verdade</div>
+    <h1>Cada vitrine, uma loja aberta <em>24 horas</em>.</h1>
+    <p class="lede">Oito páginas construídas para negócios reais — comércio de bairro, profissionais autônomas e ferramentas que trazem contato. Nada de template genérico: cada uma pensada pro negócio que ela representa.</p>
+    <div class="stats">
+      <div class="stat"><b>8</b><span>projetos entregues</span></div>
+      <div class="stat"><b>6</b><span>tipos de negócio</span></div>
+      <div class="stat"><b>100%</b><span>feitas do zero</span></div>
+    </div>
+  </section>
+
+  <!-- District 1 — Comércio & Serviço Local -->
+  <section class="district">
+    <div class="district-head">
+      <h2>Comércio &amp; serviço local</h2>
+      <p>Onde o cliente decide em segundos se entra ou passa direto.</p>
+    </div>
+    <div class="row">
+
+      <a class="shop" href="/barbearia/" target="_blank" rel="noopener">
+        <div class="window" style="--win-glow: rgba(59,130,246,0.35);">
+          <div class="scene" style="--bg:#0B0D12; --text:#F5F6FA; --text-mute:#8B93A6; --accent:#4C8DF6; --accent-soft:rgba(76,141,246,0.15);">
+            <div class="chrome" style="color:#4C8DF6;"><span></span><span></span><span></span></div>
+            <div class="scene-body">
+              <span class="tagpill">Tradição desde 2010</span>
+              <h4 class="headline">Onde o <i>estilo</i> encontra a tradição</h4>
+              <p class="subline">Cortes precisos, barba impecável, ritual de cuidado.</p>
+              <div class="ctas"><span class="btn">Agendar agora</span><span class="btn ghost">Serviços</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="plaque">
+          <div class="tag">Barbearia</div>
+          <h3>Dom Cortes</h3>
+          <p>Site institucional com agenda direto pro WhatsApp e prova social (+5.000 clientes, 15 anos).</p>
+        </div>
+      </a>
+
+      <a class="shop" href="/petshop/" target="_blank" rel="noopener">
+        <div class="window" style="--win-glow: rgba(16,185,129,0.35);">
+          <div class="scene" style="--bg: linear-gradient(160deg,#EAF7EF,#FFFFFF); --text:#0F172A; --text-mute:#5B6B63; --accent:#0EA968; --accent-soft:rgba(14,169,104,0.14);">
+            <div class="chrome" style="color:#0EA968;"><span></span><span></span><span></span></div>
+            <div class="scene-body">
+              <span class="tagpill">Pet shop + clínica</span>
+              <h4 class="headline">Tudo que seu <i>pet</i> merece em um só lugar</h4>
+              <p class="subline">Do petisco à cirurgia — entregamos na porta.</p>
+              <div class="ctas"><span class="btn">Agendar consulta</span><span class="btn ghost">Ir pra loja</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="plaque">
+          <div class="tag">Pet shop &amp; clínica veterinária</div>
+          <h3>PetLux</h3>
+          <p>Página híbrida: loja + clínica, com selo de confiança (+500 famílias, nota 4.9).</p>
+        </div>
+      </a>
+
+      <a class="shop" href="/estetica-automotiva/" target="_blank" rel="noopener">
+        <div class="window" style="--win-glow: rgba(34,211,238,0.35);">
+          <div class="scene" style="--bg:#0A0E14; --text:#F1F8FA; --text-mute:#7C93A0; --accent:#22D3EE; --accent-soft:rgba(34,211,238,0.15);">
+            <div class="chrome" style="color:#22D3EE;"><span></span><span></span><span></span></div>
+            <div class="scene-body">
+              <span class="tagpill">Proteção automotiva</span>
+              <h4 class="headline">A proteção suprema que o seu <i>carro</i> merece</h4>
+              <p class="subline">Blindagem térmica, PPF autocurativo, restauração premium.</p>
+              <div class="ctas"><span class="btn">Avaliação grátis</span><span class="btn ghost">Serviços</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="plaque">
+          <div class="tag">Estética automotiva</div>
+          <h3>F.N.D Acessórios</h3>
+          <p>Tom premium/tech pra justificar ticket alto — números de garantia em destaque.</p>
+        </div>
+      </a>
+
+      <a class="shop" href="/almoco-ja/" target="_blank" rel="noopener">
+        <div class="window" style="--win-glow: rgba(245,158,11,0.4);">
+          <div class="scene" style="--bg: linear-gradient(160deg,#C1272D,#F59E0B); --text:#FFF7E6; --text-mute:#FFE3B0; --accent:#FFE066; --accent-soft:rgba(255,224,102,0.22); --btn-text:#7A1F0A;">
+            <div class="chrome" style="color:#FFF7E6;"><span></span><span></span><span></span></div>
+            <div class="scene-body">
+              <span class="tagpill">Marmitaria &amp; delivery</span>
+              <h4 class="headline">Comida caseira <i>gostosa</i> na sua porta</h4>
+              <p class="subline">Feita na hora, ingredientes frescos, preço justo.</p>
+              <div class="ctas"><span class="btn">Ver cardápio</span><span class="btn ghost">Destaques</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="plaque">
+          <div class="tag">Marmitaria / delivery</div>
+          <h3>Almoço Já!</h3>
+          <p>Cardápio com preço visível e CTA de pedido — feita pra converter no impulso.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- District 2 — Profissionais autônomos -->
+  <section class="district">
+    <div class="district-head">
+      <h2>Profissionais autônomas</h2>
+      <p>Quando o negócio é a própria pessoa, a página precisa vender confiança.</p>
+    </div>
+    <div class="row">
+
+      <a class="shop" href="/fotografa/" target="_blank" rel="noopener">
+        <div class="window" style="--win-glow: rgba(216,148,140,0.35);">
+          <div class="scene" style="--bg: linear-gradient(165deg,#D9A9A0,#241A17 65%); --text:#F7EEE9; --text-mute:#CBB3AC; --accent:#EAC9A8; --accent-soft:rgba(234,201,168,0.2); --btn-text:#241A17;">
+            <div class="chrome" style="color:#F7EEE9;"><span></span><span></span><span></span></div>
+            <div class="scene-body">
+              <span class="tagpill">Feminino · casamentos · gestantes</span>
+              <h4 class="headline">Eternizar a sua <i>essência</i> através da luz</h4>
+              <p class="subline">Cada sessão, uma jornada de autodescoberta.</p>
+              <div class="ctas"><span class="btn">Agendar sessão</span><span class="btn ghost">Portfólio</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="plaque">
+          <div class="tag">Fotografia</div>
+          <h3>Isabela Moura</h3>
+          <p>Estética editorial e pessoal — a página vende o olhar da fotógrafa, não só o serviço.</p>
+        </div>
+      </a>
+
+      <a class="shop" href="/vet-camila-duarte/" target="_blank" rel="noopener">
+        <div class="window" style="--win-glow: rgba(16,185,129,0.3);">
+          <div class="scene" style="--bg:#FFFFFF; --text:#0F172A; --text-mute:#5B6B63; --accent:#0EA968; --accent-soft:rgba(14,169,104,0.12);">
+            <div class="chrome" style="color:#0EA968;"><span></span><span></span><span></span></div>
+            <div class="scene-body">
+              <span class="tagpill">Atendimento domiciliar</span>
+              <h4 class="headline">Cuidado veterinário sem sair de <i>casa</i></h4>
+              <p class="subline">Menos estresse pro pet, mais praticidade pra você.</p>
+              <div class="ctas"><span class="btn">Agendar visita</span><span class="btn ghost">Serviços</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="plaque">
+          <div class="tag">Medicina veterinária a domicílio</div>
+          <h3>Dra. Camila Duarte</h3>
+          <p>Autoridade (CRMV, formação) + área de cobertura por bairro + depoimentos com nome do pet.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- District 3 — Ferramentas -->
+  <section class="district">
+    <div class="district-head">
+      <h2>Ferramentas que geram contato</h2>
+      <p>Às vezes a melhor isca não é uma promessa — é uma ferramenta útil.</p>
+    </div>
+    <div class="row single">
+
+      <a class="shop" href="/calculadora-leilao/" target="_blank" rel="noopener">
+        <div class="window" style="--win-glow: rgba(5,150,105,0.3);">
+          <div class="scene" style="--bg:#F8FAFC; --text:#0F172A; --text-mute:#5B6472; --accent:#059669; --accent-soft:rgba(5,150,105,0.12); --line-soft: rgba(15,23,42,0.1);">
+            <div class="chrome" style="color:#059669;"><span></span><span></span><span></span></div>
+            <div class="scene-body">
+              <span class="tagpill">Simulador</span>
+              <h4 class="headline">Quanto custa arrematar um <i>imóvel</i> em leilão?</h4>
+              <div class="field"><label>Valor de arrematação</label><b>R$ 250.000,00</b></div>
+              <div class="field"><label>Comissão do leiloeiro</label><b>5%</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="plaque">
+          <div class="tag">Calculadora / lead magnet</div>
+          <h3>Calculadora do Arrematador</h3>
+          <p>Não é uma hero page — é uma ferramenta funcional que resolve uma dúvida real e captura o contato no processo. Pra quando o negócio precisa de mais que uma promessa bonita.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- District 4 — Direção de arte -->
+  <section class="district">
+    <div class="district-head">
+      <h2>Direção de arte</h2>
+      <p>Pra quando o negócio pede uma estética mais ousada.</p>
+    </div>
+    <div class="row single">
+
+      <a class="shop" href="/portfolio-topolski/" target="_blank" rel="noopener">
+        <div class="window" style="--win-glow: rgba(59,91,255,0.4);">
+          <div class="scene" style="--bg: radial-gradient(circle at 30% 20%, #131C3D, #05070C 70%); --text:#EAF0FF; --text-mute:#6E7BAE; --accent:#5B7CFF; --accent-soft:rgba(91,124,255,0.18);">
+            <div class="chrome" style="color:#5B7CFF;"><span></span><span></span><span></span></div>
+            <div class="scene-body">
+              <span class="tagpill">Fotógrafo de hip-hop · cultura urbana</span>
+              <h4 class="headline" style="font-family:'Big Shoulders Text',sans-serif; text-transform:uppercase; letter-spacing:0.02em;">Atopolski</h4>
+              <p class="subline">Direções · editoriais · São Paulo, BR.</p>
+            </div>
+          </div>
+        </div>
+        <div class="plaque">
+          <div class="tag">Portfólio criativo</div>
+          <h3>@atopolski</h3>
+          <p>Prova de que a mesma mão que resolve o site de um petshop também entrega uma estética de capa de disco quando o cliente pede.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="eyebrow">Próxima vitrine: a sua</div>
+    <h2>Quer ver como ficaria a página do seu negócio?</h2>
+    <p>Me manda uma mensagem com o nome do seu negócio — eu te mostro uma prévia real, sem compromisso.</p>
+    <div class="actions">
+      <a class="btn-lg primary" href="https://wa.me/5511997978901" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn-lg secondary" href="#" target="_blank" rel="noopener">Ver mais projetos</a>
+    </div>
+  </section>
+
+  <footer class="bottom">
+    <span>Rua das Vitrines — catálogo de projetos</span>
+    <span>Atualizado em 2026</span>
+  </footer>
+
+</div>
