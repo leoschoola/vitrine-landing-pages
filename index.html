@@ -1,903 +1,632 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rua das Vitrines — Landing pages para negócio de verdade</title>
-<meta name="description" content="Portfólio de landing pages feitas do zero para negócios reais — barbearia, petshop, fotógrafa, veterinária, marmitaria e mais. Veja como ficaria a página do seu negócio.">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rua das Vitrines — Landing pages para negócio de verdade</title>
+  <meta name="description" content="Portfólio de landing pages feitas do zero para negócios reais — barbearia, petshop, fotógrafa, veterinária, marmitaria e mais. Veja como ficaria a página do seu negócio.">
 
-<!-- Open Graph — WhatsApp, Instagram, LinkedIn -->
-<!-- Atualize og:url e og:image com os valores reais do seu site -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rua das Vitrines — Landing pages para negócio de verdade">
-<meta property="og:description" content="8 páginas feitas do zero para negócios reais. Veja os projetos e descubra como ficaria a sua.">
-<meta property="og:url" content="https://SEU-DOMINIO.vercel.app">
-<meta property="og:image" content="https://SEU-DOMINIO.vercel.app/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Rua das Vitrines — Landing pages para negócio de verdade">
-<meta name="twitter:description" content="8 páginas feitas do zero para negócios reais. Veja os projetos e descubra como ficaria a sua.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rua das Vitrines — Landing pages para negócio de verdade">
+  <meta property="og:description" content="8 páginas feitas do zero para negócios reais. Veja os projetos e descubra como ficaria a sua.">
+  <meta property="og:url" content="https://vitrine-landing-pages-six.vercel.app/">
+  <meta property="og:image" content="https://vitrine-landing-pages-six.vercel.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rua das Vitrines — Landing pages para negócio de verdade">
+  <meta name="twitter:description" content="8 páginas feitas do zero para negócios reais. Veja os projetos e descubra como ficaria a sua.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Big+Shoulders+Text:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-<style>
-  :root{
-    --night-0:#0C0F16;
-    --night-1:#141827;
-    --night-2:#1C2133;
-    --ink-high:#F2EEE3;
-    --ink-mid:#ACA79A;
-    --ink-low:#716C60;
-    --line: rgba(242,238,227,0.10);
-    --gold:#E3AE5C;
-    --gold-soft: rgba(227,174,92,0.18);
-    --gold-glow: rgba(227,174,92,0.35);
-  }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
+  <style>
+    :root {
+      --bg:      #FAFAF8;
+      --ink:     #161614;
+      --ink-2:   #6B6860;
+      --ink-3:   #A8A49E;
+      --accent:  #C4781A;
+      --line:    rgba(22,22,20,0.08);
+      --card-bg: #FFFFFF;
+      --dark-bg: #161614;
+      --dark-fg: #F5F4F0;
+      --r:       14px;
+    }
 
-  body{
-    background: radial-gradient(ellipse 900px 500px at 20% -10%, rgba(227,174,92,0.06), transparent 60%),
-                linear-gradient(180deg, var(--night-0), #0A0C12 60%, #08090D);
-    color: var(--ink-high);
-    font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.5;
-  }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
 
-  .wrap{
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 clamp(20px, 5vw, 56px);
-  }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
 
-  h1,h2,h3,h4{
-    font-family: "Fraunces", Georgia, serif;
-    text-wrap: balance;
-    margin: 0;
-    font-weight: 600;
-  }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 56px);
+    }
 
-  .eyebrow{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; margin: 0; }
 
-  /* ---------- Header ---------- */
-  header.top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  header.top .mark{
-    font-family:"Big Shoulders Text", sans-serif;
-    font-weight:700;
-    letter-spacing: 0.04em;
-    font-size: 1rem;
-    color: var(--ink-high);
-    text-transform: uppercase;
-  }
-  header.top .mark span{ color: var(--gold); }
-  header.top .count{
-    font-family:"IBM Plex Mono", monospace;
-    font-size: 0.75rem;
-    color: var(--ink-low);
-  }
+    /* ─── Header ───────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+    .logo {
+      font-family: "Fraunces", serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .logo em { font-style: normal; color: var(--accent); }
+    .btn-hire {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 8px 18px;
+      border: 1.5px solid rgba(22,22,20,0.18);
+      border-radius: 100px;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .btn-hire:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
-  /* ---------- Hero ---------- */
-  .hero{
-    padding: clamp(48px, 9vw, 96px) 0 clamp(40px, 7vw, 72px);
-    border-bottom: 1px solid var(--line);
-  }
-  .hero h1{
-    font-size: clamp(2.3rem, 5vw, 3.6rem);
-    font-weight: 500;
-    max-width: 15ch;
-    margin-top: 18px;
-    color: var(--ink-high);
-  }
-  .hero h1 em{
-    font-style: italic;
-    font-weight: 300;
-    color: var(--gold);
-  }
-  .hero p.lede{
-    max-width: 56ch;
-    margin-top: 22px;
-    font-size: 1.05rem;
-    color: var(--ink-mid);
-  }
-  .stats{
-    display:flex;
-    gap: clamp(24px, 5vw, 56px);
-    margin-top: 40px;
-    flex-wrap: wrap;
-  }
-  .stat b{
-    display:block;
-    font-family:"Fraunces", serif;
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--ink-high);
-  }
-  .stat span{
-    font-family:"IBM Plex Mono", monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-low);
-  }
+    /* ─── Hero ─────────────────────────────────────── */
+    .hero {
+      padding: clamp(52px, 9vw, 104px) 0 clamp(44px, 7vw, 80px);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-inner {
+      display: flex;
+      align-items: flex-end;
+      gap: clamp(28px, 5vw, 72px);
+      flex-wrap: wrap;
+    }
+    .hero-main {
+      flex: 1 1 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 28px;
+    }
+    .hero-main h1 {
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      font-weight: 500;
+      line-height: 1.03;
+      letter-spacing: -0.025em;
+    }
+    .hero-main h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
+    .hero-desc {
+      flex: 0 1 290px;
+      color: var(--ink-2);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin: 0;
+      align-self: flex-end;
+      padding-bottom: 8px;
+    }
 
-  /* ---------- Filter bar ---------- */
-  .filter-bar{
-    padding: 18px 0;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .filter-label{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-low);
-    margin-right: 2px;
-  }
-  .filter-btn{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1px solid var(--line);
-    background: transparent;
-    color: var(--ink-low);
-    cursor: pointer;
-    transition: border-color .18s, color .18s, background .18s;
-  }
-  .filter-btn:hover{
-    border-color: rgba(227,174,92,0.45);
-    color: var(--ink-mid);
-  }
-  .filter-btn.active{
-    background: var(--gold-soft);
-    border-color: var(--gold);
-    color: var(--gold);
-  }
+    /* ─── Buttons ───────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 13px 24px;
+      border-radius: 100px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      transition: opacity .15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { opacity: .86; }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 10px 20px;
+      border-radius: 100px;
+      border: 1.5px solid rgba(22,22,20,0.18);
+      color: var(--ink);
+      text-decoration: none;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .btn-outline:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
-  /* ---------- District (section) ---------- */
-  .district{
-    padding: clamp(44px, 8vw, 72px) 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .district:last-of-type{ border-bottom:none; }
-  .district-head{
-    display:flex;
-    align-items:baseline;
-    justify-content:space-between;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-bottom: 34px;
-  }
-  .district-head h2{
-    font-size: clamp(1.35rem, 2.6vw, 1.75rem);
-    font-weight: 500;
-    color: var(--ink-high);
-  }
-  .district-head p{
-    margin:0;
-    color: var(--ink-low);
-    font-size: 0.92rem;
-    max-width: 40ch;
-  }
+    /* ─── Filter bar ────────────────────────────────── */
+    .filter-bar {
+      padding: 22px 0;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--line);
+    }
+    .filter-btn {
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 7px 16px;
+      border-radius: 100px;
+      border: 1.5px solid var(--line);
+      background: transparent;
+      color: var(--ink-2);
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .filter-btn.active { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
-  .row{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 28px;
-  }
-  .row .shop{ flex: 1 1 250px; }
-  .row.single .shop{ flex: 0 1 480px; }
+    /* ─── Projects grid ─────────────────────────────── */
+    .projects-section {
+      padding: clamp(36px, 6vw, 64px) 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+    .card:nth-child(1) { grid-column: span 7; }
+    .card:nth-child(2) { grid-column: span 5; }
+    .card:nth-child(3) { grid-column: span 5; }
+    .card:nth-child(4) { grid-column: span 7; }
+    .card:nth-child(5) { grid-column: span 4; }
+    .card:nth-child(6) { grid-column: span 4; }
+    .card:nth-child(7) { grid-column: span 4; }
+    .card:nth-child(8) { grid-column: span 12; }
 
-  /* ---------- Shop card ---------- */
-  .shop{ display:flex; flex-direction:column; text-decoration:none; color:inherit; cursor:pointer; min-width: 0; }
+    .grid.filtered { grid-template-columns: repeat(3, 1fr); }
+    .grid.filtered .card        { grid-column: span 1 !important; }
+    .grid.filtered .card--hero  { grid-column: span 3 !important; }
 
-  .window{
-    display:flex;
-    flex-direction:column;
-    min-height: 280px;
-    border-radius: 10px;
-    padding: 6px;
-    background: linear-gradient(155deg, #3a2f1d, #16130c 60%);
-    box-shadow: 0 0 0 1px rgba(227,174,92,0.15),
-                0 22px 46px -20px var(--win-glow, var(--gold-glow)),
-                0 2px 10px rgba(0,0,0,0.5);
-    transition: transform .28s cubic-bezier(.2,.8,.4,1), box-shadow .28s ease;
-  }
-  .shop:hover .window{
-    transform: translateY(-7px) scale(1.015);
-    box-shadow: 0 0 0 1px rgba(227,174,92,0.4),
-                0 0 0 5px rgba(227,174,92,0.05),
-                0 42px 72px -14px var(--win-glow, var(--gold-glow)),
-                0 6px 18px rgba(0,0,0,0.65);
-  }
-  @media (prefers-reduced-motion: reduce){
-    .window{ transition:none; }
-    .shop:hover .window{ transform:none; }
-  }
+    /* ─── Card ──────────────────────────────────────── */
+    .card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card-bg);
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      transition: box-shadow .22s ease, transform .22s ease;
+    }
+    .card:hover {
+      box-shadow: 0 20px 56px -18px rgba(22,22,20,0.2);
+      transform: translateY(-3px);
+    }
+    .card-img {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: #E8E6E1;
+      flex-shrink: 0;
+    }
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .card:hover .card-img img { transform: scale(1.05); }
+    .card-info {
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+    .card-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .card-name {
+      font-family: "Fraunces", serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .card-desc {
+      font-size: 0.84rem;
+      color: var(--ink-2);
+      line-height: 1.55;
+      margin: 4px 0 0;
+    }
+    .card-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: auto;
+      padding-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap .15s;
+    }
+    .card:hover .card-link { gap: 9px; }
 
-  .scene{
-    flex: 1;
-    width:100%;
-    border-radius: 6px;
-    background: var(--bg);
-    color: var(--text);
-    display:flex;
-    flex-direction:column;
-    position:relative;
-    overflow: hidden;
-  }
-  .chrome{
-    display:flex;
-    gap:5px;
-    padding: 9px 10px;
-    background: rgba(0,0,0,0.12);
-    position: relative;
-    z-index: 1;
-    flex-shrink: 0;
-  }
-  .chrome span{
-    width:6px; height:6px; border-radius:50%;
-    background: currentColor;
-    opacity: 0.35;
-  }
-  .scene-body{
-    flex:1;
-    padding: 14px 18px 18px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    gap: 8px;
-    position: relative;
-    z-index: 1;
-  }
+    /* ─── Featured card ─────────────────────────────── */
+    .card--hero { flex-direction: row; }
+    .card--hero .card-img {
+      aspect-ratio: auto;
+      flex: 0 0 58%;
+      min-height: 300px;
+    }
+    .card--hero .card-info {
+      padding: 44px 52px;
+      justify-content: center;
+      gap: 10px;
+    }
+    .card--hero .card-name {
+      font-size: 2.4rem;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+    }
+    .card--hero .card-desc {
+      font-size: 0.96rem;
+      max-width: 34ch;
+      margin-top: 8px;
+    }
 
-  /* Decorative icon — positioned absolute in .scene, behind scene-body */
-  .scene-deco{
-    position: absolute;
-    right: 10px;
-    bottom: 14px;
-    width: 80px;
-    height: 80px;
-    color: var(--accent);
-    opacity: 0.13;
-    pointer-events: none;
-    z-index: 0;
-  }
+    /* ─── About ─────────────────────────────────────── */
+    .about-section {
+      padding: clamp(56px, 9vw, 100px) 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .about-inner {
+      display: flex;
+      align-items: center;
+      gap: clamp(40px, 8vw, 120px);
+      flex-wrap: wrap;
+    }
+    .about-text { flex: 1 1 320px; }
+    .about-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .about-text h2 {
+      font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .about-text p {
+      color: var(--ink-2);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin: 16px 0 0;
+      max-width: 46ch;
+    }
+    .about-links { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
+    .about-nums {
+      flex: 0 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 56px;
+    }
+    .about-num b {
+      display: block;
+      font-family: "Fraunces", serif;
+      font-size: 3.2rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .about-num span {
+      font-size: 0.76rem;
+      color: var(--ink-2);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 500;
+    }
 
-  /* Rating row */
-  .scene-rating{
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .scene-rating .stars{
-    color: var(--accent);
-    font-size: 0.6rem;
-    letter-spacing: 1.5px;
-  }
-  .scene-rating .rating-text{
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.52rem;
-    color: var(--text-mute);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
+    /* ─── CTA dark ──────────────────────────────────── */
+    .cta-section {
+      background: var(--dark-bg);
+      padding: clamp(72px, 12vw, 128px) 0;
+      text-align: center;
+    }
+    .cta-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .cta-section h2 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 500;
+      color: var(--dark-fg);
+      margin: 16px auto 0;
+      max-width: 16ch;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+    }
+    .cta-section h2 em { font-style: italic; font-weight: 300; color: var(--accent); }
+    .cta-sub {
+      color: rgba(245,244,240,0.62);
+      max-width: 42ch;
+      margin: 18px auto 0;
+      font-size: 1rem;
+    }
+    .cta-actions { margin-top: 36px; }
+    .cta-fine {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: rgba(245,244,240,0.45);
+    }
 
-  /* Badge */
-  .scene-badge{
-    align-self: flex-start;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.5rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: 4px;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    margin-top: 2px;
-  }
+    /* ─── Footer ────────────────────────────────────── */
+    footer {
+      background: var(--dark-bg);
+      border-top: 1px solid rgba(245,244,240,0.08);
+      padding: 20px 0 32px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.74rem;
+      color: rgba(245,244,240,0.45);
+    }
 
-  /* Photo grid — used in fotógrafa and atopolski */
-  .photo-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 3px;
-    height: 52px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 2px;
-  }
-  .photo-thumb{
-    border-radius: 2px;
-  }
+    /* ─── Responsive ────────────────────────────────── */
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .grid .card,
+      .grid .card--hero { grid-column: span 1 !important; }
+      .card--hero { flex-direction: column; }
+      .card--hero .card-img { flex: none; aspect-ratio: 16/10; min-height: auto; }
+      .card--hero .card-info { padding: 20px 22px 24px; }
+      .card--hero .card-name { font-size: 1.5rem; }
+      .about-nums { gap: 24px 40px; }
+      .about-num b { font-size: 2.6rem; }
+    }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr !important; }
+      .grid .card { grid-column: span 1 !important; }
+      .hero-main h1 { font-size: 2.8rem; }
+      .about-nums { grid-template-columns: 1fr 1fr; gap: 20px 32px; }
+    }
+  </style>
+</head>
+<body>
 
-  /* Result field (calculadora) */
-  .field.result{
-    border-color: var(--accent) !important;
-    background: rgba(5,150,105,0.07) !important;
-  }
-  .field.result label{ color: var(--accent) !important; opacity: 0.85; }
-  .field.result b{ color: var(--accent) !important; font-size: 0.82rem !important; }
+<header>
+  <div class="wrap">
+    <div class="header-inner">
+      <span class="logo">Rua das <em>Vitrines</em></span>
+      <a class="btn-hire" href="https://wa.me/5511997978901?text=Ol%C3%A1%2C%20Leonardo!%20Vi%20seu%20portf%C3%B3lio%20no%20Rua%20das%20Vitrines.%20Gostaria%20de%20ver%20uma%20pr%C3%A9via%20sem%20compromisso%20para%20o%20meu%20neg%C3%B3cio" target="_blank" rel="noopener">Contratar →</a>
+    </div>
+  </div>
+</header>
 
-  .scene .tagpill{
-    align-self:flex-start;
-    font-family:"IBM Plex Mono", monospace;
-    font-size: 0.56rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 20px;
-    background: var(--accent-soft);
-    color: var(--accent);
-  }
-  .scene .headline{
-    font-family:"Fraunces", serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    line-height:1.18;
-    color: var(--text);
-    max-width: 20ch;
-  }
-  .scene .headline i{ color: var(--accent); font-style: italic; font-weight:400; }
-  .scene .subline{
-    font-size: 0.67rem;
-    color: var(--text-mute);
-    max-width: 26ch;
-    line-height:1.4;
-  }
-  .scene .ctas{ display:flex; gap:7px; margin-top:4px; }
-  .scene .btn{
-    font-size: 0.62rem;
-    font-weight:600;
-    padding: 6px 12px;
-    border-radius: 6px;
-    background: var(--accent);
-    color: var(--btn-text, #0C0F16);
-    letter-spacing: 0.02em;
-  }
-  .scene .btn.ghost{
-    background: transparent;
-    border: 1px solid var(--text-mute);
-    color: var(--text);
-  }
-
-  /* Form-style scene (calculadora) */
-  .scene .field{
-    display:flex;
-    flex-direction:column;
-    gap:3px;
-    background: rgba(0,0,0,0.03);
-    border: 1px solid var(--line-soft, rgba(0,0,0,0.08));
-    border-radius:6px;
-    padding: 6px 9px;
-  }
-  .scene .field label{ font-size:0.52rem; color:var(--text-mute); }
-  .scene .field b{ font-family:"IBM Plex Mono", monospace; font-size:0.72rem; color:var(--text); font-weight:500; }
-
-  .plaque{
-    padding: 16px 2px 0;
-  }
-  .plaque .tag{
-    font-family:"IBM Plex Mono", monospace;
-    font-size: 0.64rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .plaque h3{
-    font-size: 1.15rem;
-    font-weight:600;
-    color: var(--ink-high);
-    margin-top: 5px;
-  }
-  .plaque p{
-    margin: 6px 0 0;
-    font-size: 0.88rem;
-    color: var(--ink-mid);
-    max-width: 34ch;
-  }
-
-  /* ---------- About section ---------- */
-  .about-section{
-    padding: clamp(44px, 8vw, 72px) 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .about-inner{
-    display: flex;
-    align-items: center;
-    gap: clamp(24px, 6vw, 64px);
-    flex-wrap: wrap;
-  }
-  .about-avatar{
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    background: var(--gold-soft);
-    border: 1.5px solid rgba(227,174,92,0.45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Fraunces", serif;
-    font-size: 1.55rem;
-    font-weight: 600;
-    color: var(--gold);
-    flex-shrink: 0;
-    box-shadow: 0 0 0 7px rgba(227,174,92,0.05);
-  }
-  .about-content{ flex: 1 1 280px; }
-  .about-name{
-    font-size: clamp(1.4rem, 2.8vw, 1.9rem);
-    font-weight: 500;
-    margin-top: 6px;
-    color: var(--ink-high);
-  }
-  .about-bio{
-    max-width: 52ch;
-    margin-top: 12px;
-    font-size: 0.98rem;
-    color: var(--ink-mid);
-    line-height: 1.6;
-  }
-  .about-links{
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
-  .about-link{
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 600;
-    font-size: 0.85rem;
-    padding: 8px 18px;
-    border-radius: 7px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    border: 1px solid var(--line);
-    color: var(--ink-mid);
-    transition: border-color .18s, color .18s;
-  }
-  .about-link--primary{
-    background: var(--gold-soft);
-    border-color: rgba(227,174,92,0.45);
-    color: var(--gold);
-  }
-  .about-link:hover{ border-color: var(--gold); color: var(--gold); }
-
-  /* ---------- Footer CTA ---------- */
-  .cta-final{
-    padding: clamp(56px, 10vw, 96px) 0 clamp(64px, 9vw, 100px);
-    text-align:center;
-  }
-  .cta-final h2{
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight:500;
-    max-width: 20ch;
-    margin: 16px auto 0;
-    color: var(--ink-high);
-  }
-  .cta-final p{
-    color: var(--ink-mid);
-    max-width: 44ch;
-    margin: 16px auto 0;
-  }
-  .cta-final .actions{
-    margin-top: 32px;
-    display:flex;
-    gap: 14px;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-  .btn-lg{
-    font-family:"IBM Plex Sans", sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 13px 26px;
-    border-radius: 8px;
-    text-decoration:none;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-  }
-  .btn-lg.primary{
-    background: var(--gold);
-    color: #171204;
-    box-shadow: 0 14px 30px -12px var(--gold-glow);
-  }
-  .cta-final .fineprint{
-    margin-top: 22px;
-    font-size: 0.78rem;
-    color: var(--ink-low);
-  }
-
-  footer.bottom{
-    border-top: 1px solid var(--line);
-    padding: 22px 0 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:10px;
-    font-family:"IBM Plex Mono", monospace;
-    font-size: 0.68rem;
-    color: var(--ink-low);
-  }
-
-  /* ---------- Photo-based scene ---------- */
-  .scene--photo {
-    background: #0c0f16;
-  }
-  .scene--photo .scene-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 0;
-    border-radius: 6px;
-  }
-  .scene--photo .chrome {
-    position: relative;
-    z-index: 2;
-    background: rgba(0,0,0,0.30);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-  }
-  .scene--photo .scene-body {
-    position: relative;
-    z-index: 2;
-    justify-content: flex-end;
-    padding-bottom: 18px;
-    background: linear-gradient(
-      to top,
-      rgba(4,4,12,0.90) 0%,
-      rgba(4,4,12,0.55) 48%,
-      transparent 100%
-    );
-  }
-  .scene--photo .tagpill {
-    background: rgba(0,0,0,0.45);
-    color: rgba(255,255,255,0.88);
-    border: 1px solid rgba(255,255,255,0.15);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-  }
-  .scene--photo .headline {
-    color: #fff;
-    font-size: 1.2rem;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.7);
-  }
-  .scene--photo .headline i {
-    color: var(--accent, #E3AE5C);
-    text-shadow: none;
-  }
-  .scene--photo .subline {
-    color: rgba(255,255,255,0.68);
-  }
-  .scene--photo .btn.ghost {
-    border-color: rgba(255,255,255,0.35);
-    color: rgba(255,255,255,0.9);
-  }
-  /* Fields on photo bg (calculadora) */
-  .scene--photo .field {
-    background: rgba(0,0,0,0.42);
-    border-color: rgba(255,255,255,0.12);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-  }
-  .scene--photo .field label { color: rgba(255,255,255,0.52); }
-  .scene--photo .field b { color: rgba(255,255,255,0.92); }
-  .scene--photo .field.result {
-    background: rgba(5,150,105,0.22) !important;
-    border-color: rgba(52,211,153,0.45) !important;
-  }
-  .scene--photo .field.result label { color: rgba(52,211,153,0.85) !important; opacity: 1; }
-  .scene--photo .field.result b { color: #34d399 !important; }
-
-  @media (max-width: 560px){
-    header.top{ flex-direction:column; align-items:flex-start; gap:8px; }
-  }
-</style>
-
-<div class="wrap">
-
-  <header class="top">
-    <div class="mark">Rua das <span>Vitrines</span></div>
-    <div class="count">8 lojas nesta rua</div>
-  </header>
+<main>
 
   <section class="hero">
-    <div class="eyebrow">Portfólio · landing pages feitas do zero</div>
-    <h1>Cada vitrine, uma loja aberta <em>24 horas</em>.</h1>
-    <p class="lede">8 landing pages construídas para negócios reais por um dev front-end especializado em páginas que vendem. Comércio de bairro, profissionais autônomas e ferramentas que trazem contato — cada uma pensada do zero pro negócio que ela representa.</p>
-    <div class="stats">
-      <div class="stat"><b>8</b><span>projetos entregues</span></div>
-      <div class="stat"><b>6</b><span>tipos de negócio</span></div>
-      <div class="stat"><b>100%</b><span>feitas do zero</span></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-main">
+          <h1>Landing pages para<br><em>negócio de verdade.</em></h1>
+          <a class="btn-primary" href="https://wa.me/5511997978901?text=Ol%C3%A1%2C%20Leonardo!%20Vi%20seu%20portf%C3%B3lio%20no%20Rua%20das%20Vitrines.%20Gostaria%20de%20ver%20uma%20pr%C3%A9via%20sem%20compromisso%20para%20o%20meu%20neg%C3%B3cio" target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+        </div>
+        <p class="hero-desc">8 páginas construídas do zero para negócios reais — comércio de bairro, autônomos e ferramentas que trazem contato. Nada de template.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Filter bar -->
-  <div class="filter-bar">
-    <span class="filter-label">Filtrar:</span>
-    <button class="filter-btn active" data-filter="todos" onclick="filterCards('todos')">Todos</button>
-    <button class="filter-btn" data-filter="comercio" onclick="filterCards('comercio')">Comércio local</button>
-    <button class="filter-btn" data-filter="autonomo" onclick="filterCards('autonomo')">Autônomos</button>
-    <button class="filter-btn" data-filter="ferramenta" onclick="filterCards('ferramenta')">Ferramentas</button>
-    <button class="filter-btn" data-filter="arte" onclick="filterCards('arte')">Arte</button>
+  <div class="wrap">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="todos"      onclick="filterCards('todos')">Todos</button>
+      <button class="filter-btn"        data-filter="comercio"   onclick="filterCards('comercio')">Comércio local</button>
+      <button class="filter-btn"        data-filter="autonomo"   onclick="filterCards('autonomo')">Autônomos</button>
+      <button class="filter-btn"        data-filter="ferramenta" onclick="filterCards('ferramenta')">Ferramentas</button>
+      <button class="filter-btn"        data-filter="arte"       onclick="filterCards('arte')">Arte</button>
+    </div>
   </div>
 
-  <!-- District 1 — Comércio & Serviço Local -->
-  <section class="district">
-    <div class="district-head">
-      <h2>Comércio &amp; serviço local</h2>
-      <p>Onde o cliente decide em segundos se entra ou passa direto.</p>
-    </div>
-    <div class="row">
+  <section class="projects-section">
+    <div class="wrap">
+      <div class="grid">
 
-      <a class="shop" href="/barbearia/" target="_blank" rel="noopener" data-cat="comercio">
-        <div class="window" style="--win-glow: rgba(59,130,246,0.35);">
-          <div class="scene scene--photo" style="--accent:#4C8DF6;">
-            <img class="scene-img" src="/images/barbearia.png" alt="Dom Cortes Barbearia">
-            <div class="chrome" style="color:#4C8DF6;"><span></span><span></span><span></span></div>
-            <div class="scene-body">
-              <span class="tagpill">Barbearia · tradição desde 2010</span>
-              <h4 class="headline">Onde o <i>estilo</i> encontra a tradição</h4>
-              <p class="subline">Cortes precisos, barba impecável, ritual de cuidado.</p>
-              <div class="ctas"><span class="btn">Agendar agora</span><span class="btn ghost">Serviços</span></div>
-            </div>
+        <a class="card" href="/barbearia/" target="_blank" rel="noopener" data-cat="comercio">
+          <div class="card-img">
+            <img src="/images/barbearia.webp" alt="Dom Cortes Barbearia" loading="lazy">
           </div>
-        </div>
-        <div class="plaque">
-          <div class="tag">Barbearia</div>
-          <h3>Dom Cortes</h3>
-          <p>Site institucional com agenda direto pro WhatsApp e prova social (+5.000 clientes, 15 anos).</p>
-        </div>
-      </a>
-
-      <a class="shop" href="/petshop/" target="_blank" rel="noopener" data-cat="comercio">
-        <div class="window" style="--win-glow: rgba(16,185,129,0.35);">
-          <div class="scene scene--photo" style="--accent:#0EA968;">
-            <img class="scene-img" src="/images/petshop.png" alt="PetLux pet shop e clínica veterinária">
-            <div class="chrome" style="color:#0EA968;"><span></span><span></span><span></span></div>
-            <div class="scene-body">
-              <span class="tagpill">Pet shop + clínica · nota 4.9</span>
-              <h4 class="headline">Tudo que seu <i>pet</i> merece em um só lugar</h4>
-              <p class="subline">Do petisco à cirurgia — entregamos na porta.</p>
-              <div class="ctas"><span class="btn">Agendar consulta</span><span class="btn ghost">Ir pra loja</span></div>
-            </div>
+          <div class="card-info">
+            <span class="card-tag">Barbearia</span>
+            <h3 class="card-name">Dom Cortes</h3>
+            <p class="card-desc">Site institucional com agenda direto pro WhatsApp e prova social (+5.000 clientes, 15 anos).</p>
+            <span class="card-link">Ver projeto →</span>
           </div>
-        </div>
-        <div class="plaque">
-          <div class="tag">Pet shop &amp; clínica veterinária</div>
-          <h3>PetLux</h3>
-          <p>Página híbrida: loja + clínica, com selo de confiança (+500 famílias, nota 4.9).</p>
-        </div>
-      </a>
+        </a>
 
-      <a class="shop" href="/estetica-automotiva/" target="_blank" rel="noopener" data-cat="comercio">
-        <div class="window" style="--win-glow: rgba(34,211,238,0.35);">
-          <div class="scene scene--photo" style="--accent:#22D3EE;">
-            <img class="scene-img" src="/images/estetica.png" alt="F.N.D estética automotiva premium">
-            <div class="chrome" style="color:#22D3EE;"><span></span><span></span><span></span></div>
-            <div class="scene-body">
-              <span class="tagpill">Estética automotiva · garantia 5 anos</span>
-              <h4 class="headline">A proteção suprema que o seu <i>carro</i> merece</h4>
-              <p class="subline">PPF autocurativo, blindagem térmica, restauração premium.</p>
-              <div class="ctas"><span class="btn">Avaliação grátis</span><span class="btn ghost">Serviços</span></div>
-            </div>
+        <a class="card" href="/petshop/" target="_blank" rel="noopener" data-cat="comercio">
+          <div class="card-img">
+            <img src="/images/petshop.webp" alt="PetLux pet shop e clínica" loading="lazy">
           </div>
-        </div>
-        <div class="plaque">
-          <div class="tag">Estética automotiva</div>
-          <h3>F.N.D Acessórios</h3>
-          <p>Tom premium/tech pra justificar ticket alto — números de garantia em destaque.</p>
-        </div>
-      </a>
-
-      <a class="shop" href="/almoco-ja/" target="_blank" rel="noopener" data-cat="comercio">
-        <div class="window" style="--win-glow: rgba(245,158,11,0.4);">
-          <div class="scene scene--photo" style="--accent:#F59E0B; --btn-text:#1a0800;">
-            <img class="scene-img" src="/images/almoco.png" alt="Almoço Já marmitaria e delivery">
-            <div class="chrome" style="color:#F59E0B;"><span></span><span></span><span></span></div>
-            <div class="scene-body">
-              <span class="tagpill">Marmitaria · delivery · ⚡ 40 min</span>
-              <h4 class="headline">Comida caseira <i>gostosa</i> na sua porta</h4>
-              <p class="subline">Feita na hora · ingredientes frescos · preço justo.</p>
-              <div class="ctas"><span class="btn">Ver cardápio</span><span class="btn ghost">Destaques</span></div>
-            </div>
+          <div class="card-info">
+            <span class="card-tag">Pet shop &amp; clínica</span>
+            <h3 class="card-name">PetLux</h3>
+            <p class="card-desc">Página híbrida loja + clínica, com selo de confiança (+500 famílias, nota 4.9).</p>
+            <span class="card-link">Ver projeto →</span>
           </div>
-        </div>
-        <div class="plaque">
-          <div class="tag">Marmitaria / delivery</div>
-          <h3>Almoço Já!</h3>
-          <p>Cardápio com preço visível e CTA de pedido — feita pra converter no impulso.</p>
-        </div>
-      </a>
+        </a>
 
-    </div>
-  </section>
-
-  <!-- District 2 — Profissionais autônomos -->
-  <section class="district">
-    <div class="district-head">
-      <h2>Profissionais autônomas</h2>
-      <p>Quando o negócio é a própria pessoa, a página precisa vender confiança.</p>
-    </div>
-    <div class="row">
-
-      <a class="shop" href="/fotografa/" target="_blank" rel="noopener" data-cat="autonomo">
-        <div class="window" style="--win-glow: rgba(216,148,140,0.35);">
-          <div class="scene scene--photo" style="--accent:#EAC9A8; --btn-text:#241A17;">
-            <img class="scene-img" src="/images/fotografa.png" alt="Isabela Moura fotógrafa" style="object-position: center top;">
-            <div class="chrome" style="color:#EAC9A8;"><span></span><span></span><span></span></div>
-            <div class="scene-body">
-              <span class="tagpill">Fotografia · casamentos · gestantes</span>
-              <h4 class="headline">Eternizar a sua <i>essência</i> através da luz</h4>
-              <p class="subline">Cada sessão, uma jornada de autodescoberta.</p>
-              <div class="ctas"><span class="btn">Agendar sessão</span><span class="btn ghost">Portfólio</span></div>
-            </div>
+        <a class="card" href="/estetica-automotiva/" target="_blank" rel="noopener" data-cat="comercio">
+          <div class="card-img">
+            <img src="/images/estetica.webp" alt="F.N.D estética automotiva premium" loading="lazy">
           </div>
-        </div>
-        <div class="plaque">
-          <div class="tag">Fotografia</div>
-          <h3>Isabela Moura</h3>
-          <p>Estética editorial e pessoal — a página vende o olhar da fotógrafa, não só o serviço.</p>
-        </div>
-      </a>
-
-      <a class="shop" href="/vet-camila-duarte/" target="_blank" rel="noopener" data-cat="autonomo">
-        <div class="window" style="--win-glow: rgba(16,185,129,0.3);">
-          <div class="scene scene--photo" style="--accent:#0EA968;">
-            <img class="scene-img" src="/images/vet.png" alt="Dra. Camila Duarte veterinária domiciliar">
-            <div class="chrome" style="color:#0EA968;"><span></span><span></span><span></span></div>
-            <div class="scene-body">
-              <span class="tagpill">Veterinária · atendimento domiciliar</span>
-              <h4 class="headline">Cuidado veterinário sem sair de <i>casa</i></h4>
-              <p class="subline">Menos estresse pro pet, mais praticidade pra você.</p>
-              <div class="ctas"><span class="btn">Agendar visita</span><span class="btn ghost">Serviços</span></div>
-            </div>
+          <div class="card-info">
+            <span class="card-tag">Estética automotiva</span>
+            <h3 class="card-name">F.N.D Acessórios</h3>
+            <p class="card-desc">Tom premium/tech pra justificar ticket alto — garantia de 5 anos em destaque.</p>
+            <span class="card-link">Ver projeto →</span>
           </div>
-        </div>
-        <div class="plaque">
-          <div class="tag">Medicina veterinária a domicílio</div>
-          <h3>Dra. Camila Duarte</h3>
-          <p>Autoridade (CRMV, formação) + área de cobertura por bairro + depoimentos com nome do pet.</p>
-        </div>
-      </a>
+        </a>
 
+        <a class="card" href="/almoco-ja/" target="_blank" rel="noopener" data-cat="comercio">
+          <div class="card-img">
+            <img src="/images/almoco.webp" alt="Almoço Já marmitaria e delivery" loading="lazy">
+          </div>
+          <div class="card-info">
+            <span class="card-tag">Marmitaria &amp; delivery</span>
+            <h3 class="card-name">Almoço Já!</h3>
+            <p class="card-desc">Cardápio com preço visível e CTA de pedido — feita pra converter no impulso.</p>
+            <span class="card-link">Ver projeto →</span>
+          </div>
+        </a>
+
+        <a class="card" href="/fotografa/" target="_blank" rel="noopener" data-cat="autonomo">
+          <div class="card-img">
+            <img src="/images/fotografa.webp" alt="Isabela Moura fotógrafa" loading="lazy" style="object-position: center top;">
+          </div>
+          <div class="card-info">
+            <span class="card-tag">Fotografia</span>
+            <h3 class="card-name">Isabela Moura</h3>
+            <p class="card-desc">Estética editorial — a página vende o olhar da fotógrafa, não só o serviço.</p>
+            <span class="card-link">Ver projeto →</span>
+          </div>
+        </a>
+
+        <a class="card" href="/vet-camila-duarte/" target="_blank" rel="noopener" data-cat="autonomo">
+          <div class="card-img">
+            <img src="/images/vet.webp" alt="Dra. Camila Duarte veterinária domiciliar" loading="lazy">
+          </div>
+          <div class="card-info">
+            <span class="card-tag">Medicina veterinária</span>
+            <h3 class="card-name">Dra. Camila Duarte</h3>
+            <p class="card-desc">Autoridade (CRMV) + cobertura por bairro + depoimentos com nome do pet.</p>
+            <span class="card-link">Ver projeto →</span>
+          </div>
+        </a>
+
+        <a class="card" href="/calculadora-leilao/" target="_blank" rel="noopener" data-cat="ferramenta">
+          <div class="card-img">
+            <img src="/images/calculadora.webp" alt="Calculadora do Arrematador leilão de imóveis" loading="lazy">
+          </div>
+          <div class="card-info">
+            <span class="card-tag">Ferramenta &amp; lead magnet</span>
+            <h3 class="card-name">Calculadora do Arrematador</h3>
+            <p class="card-desc">Não é uma hero page — é uma ferramenta que resolve uma dúvida real e captura o contato no processo.</p>
+            <span class="card-link">Ver projeto →</span>
+          </div>
+        </a>
+
+        <a class="card card--hero" href="/portfolio-topolski/" target="_blank" rel="noopener" data-cat="arte">
+          <div class="card-img">
+            <img src="/images/atopolski.webp" alt="@atopolski portfólio direção de arte urbana" loading="lazy">
+          </div>
+          <div class="card-info">
+            <span class="card-tag">Portfólio &amp; direção de arte</span>
+            <h3 class="card-name">@atopolski</h3>
+            <p class="card-desc">Hip-hop · cultura urbana · São Paulo, BR. Prova de que a mesma mão que resolve o site de um petshop também entrega estética de capa de disco quando o cliente pede.</p>
+            <span class="card-link">Ver projeto →</span>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
 
-  <!-- District 3 — Ferramentas -->
-  <section class="district">
-    <div class="district-head">
-      <h2>Ferramentas que geram contato</h2>
-      <p>Às vezes a melhor isca não é uma promessa — é uma ferramenta útil.</p>
-    </div>
-    <div class="row single">
-
-      <a class="shop" href="/calculadora-leilao/" target="_blank" rel="noopener" data-cat="ferramenta">
-        <div class="window" style="--win-glow: rgba(5,150,105,0.3);">
-          <div class="scene scene--photo" style="--accent:#059669;">
-            <img class="scene-img" src="/images/calculadora.png" alt="Calculadora do Arrematador - leilão de imóveis">
-            <div class="chrome" style="color:#059669;"><span></span><span></span><span></span></div>
-            <div class="scene-body">
-              <span class="tagpill">Simulador · lead magnet · gratuito</span>
-              <h4 class="headline">Quanto custa arrematar um <i>imóvel</i> em leilão?</h4>
-              <div class="field"><label>Valor de arrematação</label><b>R$ 250.000,00</b></div>
-              <div class="field result"><label>Custo total estimado</label><b>R$ 292.500,00</b></div>
-            </div>
-          </div>
-        </div>
-        <div class="plaque">
-          <div class="tag">Calculadora / lead magnet</div>
-          <h3>Calculadora do Arrematador</h3>
-          <p>Não é uma hero page — é uma ferramenta funcional que resolve uma dúvida real e captura o contato no processo. Pra quando o negócio precisa de mais que uma promessa bonita.</p>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- District 4 — Direção de arte -->
-  <section class="district">
-    <div class="district-head">
-      <h2>Direção de arte</h2>
-      <p>Pra quando o negócio pede uma estética mais ousada.</p>
-    </div>
-    <div class="row single">
-
-      <a class="shop" href="/portfolio-topolski/" target="_blank" rel="noopener" data-cat="arte">
-        <div class="window" style="--win-glow: rgba(59,91,255,0.4);">
-          <div class="scene scene--photo" style="--accent:#5B7CFF;">
-            <img class="scene-img" src="/images/atopolski.png" alt="@atopolski portfólio direção de arte urbana">
-            <div class="chrome" style="color:#5B7CFF;"><span></span><span></span><span></span></div>
-            <div class="scene-body">
-              <span class="tagpill">Portfólio · hip-hop · cultura urbana</span>
-              <h4 class="headline" style="font-family:'Big Shoulders Text',sans-serif; text-transform:uppercase; letter-spacing:0.03em; font-size:1.45rem;">@atopolski</h4>
-              <p class="subline">Direções · editoriais · São Paulo, BR.</p>
-              <div class="ctas"><span class="btn">Ver trabalhos</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="plaque">
-          <div class="tag">Portfólio criativo</div>
-          <h3>@atopolski</h3>
-          <p>Prova de que a mesma mão que resolve o site de um petshop também entrega uma estética de capa de disco quando o cliente pede.</p>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- About section -->
   <section class="about-section">
-    <div class="about-inner">
-      <div class="about-avatar" aria-hidden="true">LS</div>
-      <div class="about-content">
-        <div class="eyebrow">Quem faz as vitrines</div>
-        <h2 class="about-name">Leonardo Schoola</h2>
-        <p class="about-bio">Dev front-end especializado em landing pages de alta conversão para negócios locais e autônomos. Cada projeto começa com a pergunta certa: o que esse negócio precisa provar pro cliente em 5 segundos? Me manda uma mensagem — eu te mostro uma prévia real, sem compromisso.</p>
-        <div class="about-links">
-          <a href="https://wa.me/5511997978901" class="about-link about-link--primary" target="_blank" rel="noopener">WhatsApp</a>
-          <!-- Adicione links de LinkedIn, GitHub ou Instagram aqui -->
+    <div class="wrap">
+      <div class="about-inner">
+        <div class="about-text">
+          <span class="about-label">Quem faz</span>
+          <h2>Leonardo Schoola</h2>
+          <p>Dev front-end especializado em landing pages de alta conversão para negócios locais e autônomos. Cada projeto começa com a pergunta certa: o que esse negócio precisa provar pro cliente em 5 segundos?</p>
+          <div class="about-links">
+            <a class="btn-outline" href="https://wa.me/5511997978901?text=Ol%C3%A1%2C%20Leonardo!%20Vi%20seu%20portf%C3%B3lio%20no%20Rua%20das%20Vitrines.%20Gostaria%20de%20ver%20uma%20pr%C3%A9via%20sem%20compromisso%20para%20o%20meu%20neg%C3%B3cio" target="_blank" rel="noopener">WhatsApp →</a>
+          </div>
+        </div>
+        <div class="about-nums">
+          <div class="about-num"><b>8</b><span>projetos</span></div>
+          <div class="about-num"><b>6</b><span>segmentos</span></div>
+          <div class="about-num"><b>100%</b><span>do zero</span></div>
+          <div class="about-num"><b>&lt;24h</b><span>resposta</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-final">
-    <div class="eyebrow">Próxima vitrine: a sua</div>
-    <h2>Quer ver como ficaria a página do seu negócio?</h2>
-    <p>Me manda uma mensagem com o nome do seu negócio — eu te mostro uma prévia real, sem compromisso.</p>
-    <div class="actions">
-      <a class="btn-lg primary" href="https://wa.me/5511997978901" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  <section class="cta-section">
+    <div class="wrap">
+      <p class="cta-eyebrow">Próxima vitrine: a sua</p>
+      <h2>Quer ver como ficaria <em>o seu</em>?</h2>
+      <p class="cta-sub">Manda o nome do negócio — eu mostro uma prévia real, sem compromisso.</p>
+      <div class="cta-actions">
+        <a class="btn-primary" href="https://wa.me/5511997978901?text=Ol%C3%A1%2C%20Leonardo!%20Vi%20seu%20portf%C3%B3lio%20no%20Rua%20das%20Vitrines.%20Gostaria%20de%20ver%20uma%20pr%C3%A9via%20sem%20compromisso%20para%20o%20meu%20neg%C3%B3cio" target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+      </div>
+      <p class="cta-fine">Respondo em menos de 24h · sem custo pra ver a prévia</p>
     </div>
-    <p class="fineprint">Respondo em menos de 24h · sem custo pra ver a prévia</p>
   </section>
 
-  <footer class="bottom">
-    <span>Rua das Vitrines — catálogo de projetos</span>
-    <span>Atualizado em 2026</span>
-  </footer>
+</main>
 
-</div>
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <span>Rua das Vitrines — catálogo de projetos</span>
+      <span>Atualizado em 2026</span>
+    </div>
+  </div>
+</footer>
 
 <script>
   function filterCards(cat) {
+    var grid = document.querySelector('.grid');
+    var cards = document.querySelectorAll('.card');
     document.querySelectorAll('.filter-btn').forEach(function(b) {
       b.classList.toggle('active', b.dataset.filter === cat);
     });
-    document.querySelectorAll('.shop').forEach(function(card) {
-      card.style.display = (cat === 'todos' || card.dataset.cat === cat) ? '' : 'none';
-    });
-    document.querySelectorAll('.district').forEach(function(district) {
-      var shops = district.querySelectorAll('.shop');
-      if (!shops.length) return;
-      var hasVisible = Array.from(shops).some(function(s) { return s.style.display !== 'none'; });
-      district.style.display = hasVisible ? '' : 'none';
-    });
+    if (cat === 'todos') {
+      grid.classList.remove('filtered');
+      cards.forEach(function(c) { c.style.display = ''; });
+    } else {
+      grid.classList.add('filtered');
+      cards.forEach(function(c) {
+        c.style.display = (c.dataset.cat === cat) ? '' : 'none';
+      });
+    }
   }
 </script>
+
+</body>
+</html>
