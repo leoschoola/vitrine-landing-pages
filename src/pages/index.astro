@@ -1,0 +1,292 @@
+---
+import Base from '../layouts/Base.astro';
+import Card from '../components/Card.astro';
+import { projects } from '../data/projects';
+
+const waLink = `https://wa.me/5511997978901?text=Ol%C3%A1%2C%20Leonardo!%20Vi%20seu%20portf%C3%B3lio%20no%20Rua%20das%20Vitrines.%20Gostaria%20de%20ver%20uma%20pr%C3%A9via%20sem%20compromisso%20para%20o%20meu%20neg%C3%B3cio`;
+---
+
+<Base>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-main">
+          <h1>Landing pages para<br><em>negócio de verdade.</em></h1>
+          <a class="btn-primary" href={waLink} target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+        </div>
+        <p class="hero-desc">8 páginas construídas do zero para negócios reais — comércio de bairro, autônomos e ferramentas que trazem contato. Nada de template.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="comercio">Comércio local</button>
+      <button class="filter-btn" data-filter="autonomo">Autônomos</button>
+      <button class="filter-btn" data-filter="ferramenta">Ferramentas</button>
+      <button class="filter-btn" data-filter="arte">Arte</button>
+    </div>
+  </div>
+
+  <section class="projects-section">
+    <div class="wrap">
+      <div class="grid" id="projects-grid">
+        {projects.map((project) => <Card project={project} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="wrap">
+      <div class="about-inner">
+        <div class="about-text">
+          <span class="about-label">Quem faz</span>
+          <h2>Leonardo Schoola</h2>
+          <p>Dev front-end especializado em landing pages de alta conversão para negócios locais e autônomos. Cada projeto começa com a pergunta certa: o que esse negócio precisa provar pro cliente em 5 segundos?</p>
+          <div class="about-links">
+            <a class="btn-outline" href={waLink} target="_blank" rel="noopener">WhatsApp →</a>
+          </div>
+        </div>
+        <div class="about-nums">
+          <div class="about-num"><b>8</b><span>projetos</span></div>
+          <div class="about-num"><b>6</b><span>segmentos</span></div>
+          <div class="about-num"><b>100%</b><span>do zero</span></div>
+          <div class="about-num"><b>&lt;24h</b><span>resposta</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="wrap">
+      <p class="cta-eyebrow">Próxima vitrine: a sua</p>
+      <h2>Quer ver como ficaria <em>o seu</em>?</h2>
+      <p class="cta-sub">Manda o nome do negócio — eu mostro uma prévia real, sem compromisso.</p>
+      <div class="cta-actions">
+        <a class="btn-primary" href={waLink} target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+      </div>
+      <p class="cta-fine">Respondo em menos de 24h · sem custo pra ver a prévia</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ─── Hero ─────────────────────────────────────── */
+  .hero {
+    padding: clamp(52px, 9vw, 104px) 0 clamp(44px, 7vw, 80px);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-inner {
+    display: flex;
+    align-items: flex-end;
+    gap: clamp(28px, 5vw, 72px);
+    flex-wrap: wrap;
+  }
+  .hero-main {
+    flex: 1 1 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  .hero-main h1 {
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    font-weight: 500;
+    line-height: 1.03;
+    letter-spacing: -0.025em;
+  }
+  .hero-main h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
+  .hero-desc {
+    flex: 0 1 290px;
+    color: var(--ink-2);
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 0;
+    align-self: flex-end;
+    padding-bottom: 8px;
+  }
+
+  /* ─── Filter bar ────────────────────────────────── */
+  .filter-bar {
+    padding: 22px 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--line);
+  }
+  .filter-btn {
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 100px;
+    border: 1.5px solid var(--line);
+    background: transparent;
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .filter-btn.active { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+
+  /* ─── Projects grid ─────────────────────────────── */
+  .projects-section {
+    padding: clamp(36px, 6vw, 64px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 18px;
+  }
+  .grid :global(.card:nth-child(1)) { grid-column: span 7; }
+  .grid :global(.card:nth-child(2)) { grid-column: span 5; }
+  .grid :global(.card:nth-child(3)) { grid-column: span 5; }
+  .grid :global(.card:nth-child(4)) { grid-column: span 7; }
+  .grid :global(.card:nth-child(5)) { grid-column: span 4; }
+  .grid :global(.card:nth-child(6)) { grid-column: span 4; }
+  .grid :global(.card:nth-child(7)) { grid-column: span 4; }
+  .grid :global(.card:nth-child(8)) { grid-column: span 12; }
+
+  .grid.filtered { grid-template-columns: repeat(3, 1fr); }
+  .grid.filtered :global(.card)        { grid-column: span 1 !important; }
+  .grid.filtered :global(.card--hero)  { grid-column: span 3 !important; }
+
+  /* ─── About ─────────────────────────────────────── */
+  .about-section {
+    padding: clamp(56px, 9vw, 100px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .about-inner {
+    display: flex;
+    align-items: center;
+    gap: clamp(40px, 8vw, 120px);
+    flex-wrap: wrap;
+  }
+  .about-text { flex: 1 1 320px; }
+  .about-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .about-text h2 {
+    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .about-text p {
+    color: var(--ink-2);
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 16px 0 0;
+    max-width: 46ch;
+  }
+  .about-links { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
+  .about-nums {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 56px;
+  }
+  .about-num b {
+    display: block;
+    font-family: "Fraunces", serif;
+    font-size: 3.2rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .about-num span {
+    font-size: 0.76rem;
+    color: var(--ink-2);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: 500;
+  }
+
+  /* ─── CTA dark ──────────────────────────────────── */
+  .cta-section {
+    background: var(--dark-bg);
+    padding: clamp(72px, 12vw, 128px) 0;
+    text-align: center;
+  }
+  .cta-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .cta-section h2 {
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 500;
+    color: var(--dark-fg);
+    margin: 16px auto 0;
+    max-width: 16ch;
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+  }
+  .cta-section h2 em { font-style: italic; font-weight: 300; color: var(--accent); }
+  .cta-sub {
+    color: rgba(245,244,240,0.62);
+    max-width: 42ch;
+    margin: 18px auto 0;
+    font-size: 1rem;
+  }
+  .cta-actions { margin-top: 36px; }
+  .cta-fine {
+    margin-top: 16px;
+    font-size: 0.78rem;
+    color: rgba(245,244,240,0.45);
+  }
+
+  /* ─── Responsive ────────────────────────────────── */
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .grid :global(.card),
+    .grid :global(.card--hero) { grid-column: span 1 !important; }
+    :global(.card--hero) { flex-direction: column; }
+    :global(.card--hero .card-img) { flex: none; aspect-ratio: 16/10; min-height: auto; }
+    :global(.card--hero .card-info) { padding: 20px 22px 24px; }
+    :global(.card--hero .card-name) { font-size: 1.5rem; }
+    .about-nums { gap: 24px 40px; }
+    .about-num b { font-size: 2.6rem; }
+  }
+  @media (max-width: 560px) {
+    .grid { grid-template-columns: 1fr !important; }
+    .grid :global(.card) { grid-column: span 1 !important; }
+    .hero-main h1 { font-size: 2.8rem; }
+    .about-nums { grid-template-columns: 1fr 1fr; gap: 20px 32px; }
+  }
+</style>
+
+<script>
+  const grid = document.getElementById('projects-grid')!;
+  const cards = grid.querySelectorAll<HTMLElement>('.card');
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.filter!;
+
+      buttons.forEach((b) => b.classList.toggle('active', b === btn));
+
+      if (cat === 'todos') {
+        grid.classList.remove('filtered');
+        cards.forEach((c) => { c.style.display = ''; });
+      } else {
+        grid.classList.add('filtered');
+        cards.forEach((c) => {
+          c.style.display = c.dataset.cat === cat ? '' : 'none';
+        });
+      }
+    });
+  });
+</script>

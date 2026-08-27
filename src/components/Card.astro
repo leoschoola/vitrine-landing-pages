@@ -1,0 +1,32 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<a
+  class:list={['card', { 'card--hero': project.hero }]}
+  href={project.href}
+  target="_blank"
+  rel="noopener"
+  data-cat={project.category}
+>
+  <div class="card-img">
+    <img
+      src={project.image}
+      alt={project.imageAlt}
+      loading="lazy"
+      style={project.imagePosition ? `object-position: ${project.imagePosition}` : undefined}
+    />
+  </div>
+  <div class="card-info">
+    <span class="card-tag">{project.tag}</span>
+    <h3 class="card-name">{project.name}</h3>
+    <p class="card-desc">{project.description}</p>
+    <span class="card-link">Ver projeto →</span>
+  </div>
+</a>
